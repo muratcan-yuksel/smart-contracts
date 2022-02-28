@@ -1,19 +1,21 @@
-pragma solidity ^0.8.11
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.11;
 
 contract Greeting {
     string public name;
     string public greetingPrefix = "Hello ";
 
-    constructor(string initialName){
+    constructor(string memory initialName){
         name= initialName;
 
     }
 
-    function setName(string newName) public {
+    function setName(string memory newName) public {
         name= newName;
     }
 
-function getGreeting() public view returns (string){
+function getGreeting() public view returns (string memory){
 //this abi.encodePacked() is a helper function in solidity
 //the reason to use this is that we're trying to concat strings
 //but in solidity, we can't do it easily like we'd do in JS
